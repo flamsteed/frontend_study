@@ -1,0 +1,26 @@
+#app {
+    position: absolute;
+    left: 30%;
+    top: 200px;   
+}
+
+#app .center  {
+    display: block;
+    width: 700px;
+    height: 458px;
+}
+
+#app .center .left {
+    left: 15px;
+    text-align: left;
+    padding-right: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#app .center > :right {
+    display: block;
+    width: 100px;
+    height: 458px;
+}
+

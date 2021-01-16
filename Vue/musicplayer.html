@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" type="text/css" href=""/>
+</head>
+
+<body>
+    <div class="wrap" id="app">
+        <!-- 播放器主体区域 -->
+        <div class="play_wrap" id="player">
+            <div class="search_bar">
+                <!-- 搜索歌曲 -->
+                <input type="text" autocomplete="off" v-model="query" @keyup.enter="searchMusic" />
+            </div>
+            <div class="center_con">
+                <!-- 搜索歌曲列表 -->
+                <div class="song_wrapper">
+                    <ul class="song_list">
+                        <li><a href="javascript:;"></a><b>后来的我们</b> <span><i></i></span></li>
+                        <li><a href="javascript:;"></a><b>后来的我们</b> <span><i></i></span></li>
+                    </ul>
+                    <img src="" class="switch_btn" alt="">
+                </div>
+                <!-- 歌曲信息容器 -->
+                <div class="player_con">
+                    <img src="" class="play_bar">
+                    <!-- 黑胶唱片 -->
+                    <img src="" class="disc autoRotate"/>
+                    <img src="" class="cover autoRotate"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 官方提供的axios在线地址 -->
+    <script src="http://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 导入自己的js -->
+    <script src="./js/musicplayer.js"></script>
+</body>
+
+</html>

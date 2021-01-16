@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>el挂载点</title>
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <input type="button" value="事件绑定" v-on:click="doIt"></input>
+        <input type="button" value="事件绑定" v-on:mouseenter="doIt"></input>
+        <input type="button" value="事件绑定" v-on:dblclick="doIt"></input>
+        <input type="button" value="事件绑定" @dblclick="doIt"></input>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods:{
+                doIt:function(){
+                    // 逻辑
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

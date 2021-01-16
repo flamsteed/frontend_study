@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计数器</title>
+    <link rel="stylesheet" href="./css/counter.css" />
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <!-- 计数器功能区域 -->
+        <div class="input-num">
+            <button @click="sub">
+                -
+            </button>
+            <span>
+                {{ num }}
+            </span>
+            <button @click="add">
+                +
+            </button>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                num : 1
+            },
+            methods:{
+                add:function(){
+                    if(this.num<10){
+                        this.num++;
+                    }
+                    else{
+                        alert("已到达最大边界");
+                    }
+                },
+                sub:function(){
+                    if(this.num>0){
+                        this.num--;
+                    }
+                    else{
+                        alert("已到达最小边界");
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+#app {
+    position: absolute;
+    left: 30%;
+    top: 200px;
+    
+}
+
+.input-num button{
+    width: 150px;
+    height: 100%;
+    font-size: 40px;
+    color: #ad2a27;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.input-num span{
+    height: 100%;
+    font-size: 40px;
+    flex: 1;
+    text-align: center;
+    line-height: 80px;
+    font-family: auto;
+    background-color: white;
+}

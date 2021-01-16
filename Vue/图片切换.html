@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片切换</title>
+    <link rel="stylesheet" href="./css/pic.css"/>
+</head>
+
+<body>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <div class="center">
+            <h2 class="title">
+                图片
+            </h2>
+            <!-- 图片 -->
+            <img :src="imgArr[index]" alt="" />
+            <!-- 左箭头 -->
+            <a href="javascript:void(0)" @click="prev" v-show="index>0" class="left">
+                <img src="./img/piclist/prev.jpg" alt="" />
+            </a>
+            <!-- 右箭头 -->
+            <a href="javascript:void(0)" @click="next" v-show="index < imgArr.length-1" class="right">
+                <img src="./img/piclist/next.jpg" alt="" />
+            </a>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                imgArr: [
+                    "./img/piclist/00.jpg",
+                    "./img/piclist/01.jpg",
+                    "./img/piclist/02.jpg",
+                    "./img/piclist/03.jpg",
+                    "./img/piclist/04.jpg",
+                    "./img/piclist/05.jpg",
+                ],
+                index: 0
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
