@@ -21,18 +21,45 @@
                 <!-- 搜索歌曲列表 -->
                 <div class="song_wrapper">
                     <ul class="song_list">
-                        <li><a href="javascript:;"></a><b>后来的我们</b> <span><i></i></span></li>
-                        <li><a href="javascript:;"></a><b>后来的我们</b> <span><i></i></span></li>
+                        <li v-for="item in musicList">
+                            <a href="javascript:;" @click="playMusic(item.id)"></a>
+                            <b>{{ item.name }}</b>
+                            <span v-if="item.mvid!=0" @click="playMV(item.mvid)"><i></i></span>
+                        </li>
                     </ul>
                     <img src="" class="switch_btn" alt="">
                 </div>
                 <!-- 歌曲信息容器 -->
-                <div class="player_con">
+                <div class="player_con" :class="{playing:isPlaying}">
                     <img src="" class="play_bar">
                     <!-- 黑胶唱片 -->
                     <img src="" class="disc autoRotate"/>
-                    <img src="" class="cover autoRotate"/>
+                    <img :src="musicCover" class="cover autoRotate"/>
                 </div>
+            </div>
+            <!-- 评论容器 -->
+            <div class="comment-wrapper">
+                <h5 class="title">热门留言</h5>
+                <div class="comment_list">
+                    <dl v-for="item in hotComments">
+                        <dt>
+                            <img :src="item.user.avatarUrl" alt="">
+                        </dt>
+                        <dd class="name">
+                            {{ item.user.nickname }}
+                        </dd>
+                        <dd class="detail">
+                            {{ item.content }}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="audio_con">
+                <audio ref='audio' @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
+            </div>
+            <div class="videuo_con" v-show="isShow" style="display: none;">
+                <video :src="mvUrl" controls="controls"></video>
+                <div class="mask" @click="hide"></div>
             </div>
         </div>
     </div>
